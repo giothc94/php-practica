@@ -1,0 +1,30 @@
+{%extends "layouts.twig"%}
+{%block content%}
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12">
+      <header>
+        <h1>Add Post</h1>
+      </header>
+    </div>
+ </div>
+  <div class="row">
+    <div class="col-xl-12">
+      <p><a href="{{ 'admin/manage' | url }}" class="btn btn-primary" role="button">Back</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-8">
+      <form class="form-control" method="post">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input class="form-control" type="text" name="title" id="title" required placeholder="Aqui el titulo de tu post">
+        </div>
+        <textarea class="form-control" name="content" id="content" rows="5" required placeholder="Contenido del post....."></textarea>
+        <br>
+        <input class="btn btn-success form-control" type="submit" name="action" value="Guardar">
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}

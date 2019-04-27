@@ -1,0 +1,74 @@
+{% extends "layouts.twig" %}
+
+{% block content %}
+<header>
+  <h1>Blog post</h1>
+</header>
+<nav>
+  <ul class="nav justify-content-center nav-fill nav-tabs">
+    <li class="nav-item">
+      <a href="bdconnection/connection.ph" class="nav-link">Prueba de conexion</a>
+    </li>
+    <li class="nav-item">
+      <a href="{{'admin'| url }}" class="nav-link">Admin panel</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">ejemplo</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">ejemplo</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">ejemplo</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-8">
+      <header>
+        <h2>Post</h2>
+      </header>
+    </div>
+    <div class="col-xl-4">
+      <h2>Sidebar</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-8">
+      {% for posts in posts %}
+      <div class="blog-post">
+        <header>
+          <h3>{{posts.title}}</h3>
+        </header>
+        <p>Jan 18, 2018 by <a href="#">alex</a> </p>
+        <div class="blog-post-image">
+          <img src="../img/blog.jpg" alt="imagen del post" width="100%">
+        </div>
+        <div class="blog-post-content">
+          {{posts.post}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="col-xl-4">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <article class="">
+        <header>
+          <h3>Articulo</h3>
+        </header>
+        <section>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </section>
+      </article>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-12">
+      <footer>
+        <p><small> <strong>this is a footer</strong> </small></p>
+      </footer>
+    </div>
+  </div>
+</div>
+{% endblock %}

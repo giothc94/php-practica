@@ -1,0 +1,38 @@
+{% extends "layouts.twig"%}
+
+{%block content%}
+<div class="container">
+  <div class="row">
+    <header>
+      <h1>Manage</h1>
+    </header>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-xl-2">
+      <a href="{{'admin'|url}}" class="btn btn-primary" role="button">Back</a>
+    </div>
+    <div class="col-xl-2">
+      <a href="{{'admin/manage/newpost'|url}}" class="btn btn-secondary" role="button">Add post</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-8">
+      <br>
+      <table class="table">
+        <tr>
+          <th>Title Posts</th>
+          <th>edit</th>
+          <th>delete</th>
+        </tr>
+        {% for queryresult in queryresult %}
+          <tr>
+            <td>{{queryresult.title}}</td>
+            <td><a href="../admin/edit.php?id='.$blog['id_post'] .'">edit</a></td>
+            <td><a href="../bdconnection/delete.php?id_post='.$blog['id_post'] .'">delete</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{%endblock%}
